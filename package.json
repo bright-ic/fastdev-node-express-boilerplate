@@ -6,7 +6,7 @@
     "start": "npm run prod",
     "server": "babel-node ./src/bin/www",
     "server:prod": "node ./dist/bin/www",
-    "dev": "set NODE_ENV=development & npm-run-all compile-sass server",
+    "dev": "set NODE_ENV=development & set DEBUG=app:* & & npm-run-all compile-sass server",
     "clean:dev": "rimraf dist/assets/js",
     "clean": "rimraf dist",
     "build": "babel ./src --out-dir dist --copy-files --ignore static/stylesheets/sass",
