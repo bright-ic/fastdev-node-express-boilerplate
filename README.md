@@ -6,7 +6,7 @@ fastdev-node-express is a boilerplate for building node js app with express capa
 
 ### 1. Clone this repo
 
-eg from command line run
+eg 
 git clone https://github.com/bright-ic/fastdev-node-express-boilerplate.git
 
 ### 2. Install the project dependemcies
