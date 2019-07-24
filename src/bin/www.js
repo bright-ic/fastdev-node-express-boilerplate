@@ -7,7 +7,7 @@ import app from "../app";
 import debugLib from "debug";
 import http from "http";
 
-const debug = debugLib("idrisa:server");
+const debug = debugLib("App:server");
 
 /**
  * Get port from environment and store in Express.
@@ -84,4 +84,5 @@ function onListening() {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
+  debug(`Running on localhost:${addr.port}: open on your browser.`);
 }
