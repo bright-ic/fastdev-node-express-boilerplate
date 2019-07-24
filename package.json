@@ -1,0 +1,36 @@
+{
+  "name": "idrisa-gulp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run prod",
+    "server": "babel-node ./src/bin/www",
+    "server:prod": "node ./dist/bin/www",
+    "dev": "set NODE_ENV=development & npm-run-all compile-sass server",
+    "clean:dev": "rimraf dist/assets/js",
+    "clean": "rimraf dist",
+    "build": "babel ./src --out-dir dist --copy-files --ignore static/stylesheets/sass",
+    "compile-sass": "node-sass ./src/static/stylesheets/sass --include-path node_modules --output dist/static/stylesheets --output-style compressed",
+    "prod": "set NODE_ENV=production && npm-run-all clean build compile-sass server:prod",
+    "watch": "nodemon"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-preset-minify": "^0.5.0",
+    "nodemon": "^1.19.1"
+  }
+}
